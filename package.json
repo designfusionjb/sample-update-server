@@ -1,0 +1,17 @@
+{
+  "name": "sample-update-server",
+  "version": "1.0.0",
+  "description": "Simple update server for an imaginary application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "https://github.com/andrey-martynyuk/sample-update-server.git",
+  "author": "Andrey Martynyuk",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "sqlite3": "^3.1.8"
+  }
+}
