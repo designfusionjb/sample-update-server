@@ -26,6 +26,24 @@ app.use(logger("dev"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
+app.set('view engine', 'html');
+app.engine('html', require('hbs').__express);
+
+app.get("/", function(req, res) {
+  db.all("SELECT *, rowid AS [id] FROM [file];", function(err, rows) {
+    const json = {
+      files: rows
+    };
+    res.render("index", json);
+  });
+});
+
+app.post("/", function(req, res) {
+  const file = req.body;
+  console.log(file);
+  res.redirect("/");
+});
+
 app.get("/api/files", function(req, res) {
   db.all("SELECT * FROM [file];", function(err, rows) {
     const json = JSON.stringify(rows);
@@ -43,7 +61,8 @@ app.put("/api/files", function(req, res) {
   });
 });
 
-app.listen(3000, function() {
+let port = process.env.PORT || 3000;
+app.listen(port, function() {
   console.log("Example app listening on port 3000!");
 });
 
