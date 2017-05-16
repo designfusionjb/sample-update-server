@@ -58,15 +58,11 @@
         <!-- Main jumbotron for a primary marketing message or call to action -->
         <div class="jumbotron">
             <h1>Sample Update Server</h1>
-            <p>This is a template showcasing the optional theme stylesheet included in Bootstrap. Use it as a starting point
-                to create something more unique by building on or modifying it.</p>
+            <p>This is a template showcasing how update server UI may look like.</p>
+            <button id="add-file" type="button" class="btn btn-primary btn-lg">Add File</button>
         </div>
 
-        <div class="page-header">
-            <h1>Files</h1>
-        </div>
-
-        <form id="new-file" action="/" method="post">
+        <div class="panel panel-default">
             <table class="table table-striped">
                 <thead>
                     <tr>
@@ -79,7 +75,8 @@
                         <th>OS Version</th>
                         <th>OS Locale</th>
                         <th>Update Channel</th>
-                        <th>Actions</th>
+                        <th></th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -94,11 +91,16 @@
                         <td>{{osVersion}}</td>
                         <td>{{osLocale}}</td>
                         <td>{{updateChannel}}</td>
-                        <td><button id="file-{{id}}" type="button" class="btn btn-danger delete-file">Delete</button></td>
+                        <td>
+                            <button id="edit-file-{{id}}" type="button" class="btn btn-default edit-file">Edit</button>
+                        </td>
+                        <td>
+                            <button id="delete-file-{{id}}" type="button" class="btn btn-danger delete-file">Delete</button>
+                        </td>
                     </tr>
                     {{/files}}
                 </tbody>
-                <tfoot>
+                <!--tfoot>
                     <tr>
                         <td><input name="name" placeholder="Name" type="text" class="form-control" /></td>
                         <td><input name="size" placeholder="Size" type="text" class="form-control" /></td>
@@ -109,11 +111,12 @@
                         <td><input name="osVersion" placeholder="Version" type="text" class="form-control" /></td>
                         <td><input name="osLocale" placeholder="Locale" type="text" class="form-control" /></td>
                         <td><input name="updateChannel" placeholder="Channel" type="text" class="form-control" /></td>
-                        <td><button id="add-file" type="submit" class="btn btn-primary">Add</button></td>
+                        <td></td>
+                        <td></td>
                     </tr>
-                </tfoot>
+                </tfoot-->
             </table>
-        </form>
+        </div>
 
     </div>
     <!-- /container -->
